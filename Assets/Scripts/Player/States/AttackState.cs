@@ -4,14 +4,6 @@ using UnityEngine;
 
 namespace Assets.Scripts.Player
 {
-    enum CardinalDirections
-    {
-        Up,
-        Down,
-        Left,
-        Right,
-    }
-
     sealed class AttackState : IState
     {
         private float startTime;
@@ -22,10 +14,10 @@ namespace Assets.Scripts.Player
         {
             var direction = player.Input.Movement;
 
-            // If not giving any significant input
-            // attack in direction of facing.
             if (direction.sqrMagnitude < 0.01f)
             {
+                // If not giving any significant input
+                // attack in direction of facing.
                 direction = player.Facing;
             }
 
@@ -56,14 +48,14 @@ namespace Assets.Scripts.Player
                     return;
             }
 
-            // If airborne, use the air version of the attack.
             if (player.Surface.Airborne)
             {
+                // If airborne, use the air version of the attack.
                 animation += "Air";
             }
-            // We can't attack down while grounded
             else if (cardinal == Utility.Direction.Down)
             {
+                // We can't attack down while grounded.
                 return;
             }
 
