@@ -1,4 +1,5 @@
 # PlatformerTest
+![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)
 
 A prototype 2D platforming character controller. 
 You can play around in the small example scene [Here](https://samson.itch.io/platformer-test).
