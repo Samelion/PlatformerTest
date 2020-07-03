@@ -30,7 +30,6 @@ class FallSlideState : IState
 
         // If aren't moving relative to the surface, we stand up.
         var notMoving = p.GetSurfaceProjectedVelocity().magnitude <= StandThreshold;
-        Debug.Log($"NotMoving: {notMoving}, Mag: {p.GetSurfaceProjectedVelocity().magnitude}.");
         if (notMoving && p.Surface.Grounded)
         {
             return new GetupStandState();
